@@ -22,6 +22,9 @@ requirements:
     - pip
     - python ${{ python_min }}.*
     - setuptools
+  run:
+    - python >=${{ python_min }}
+    - setuptools
     - if: unix
       then: 
       - unixodbc
@@ -29,9 +32,6 @@ requirements:
     - if: win
       then:
       - __win
-  run:
-    - python >=${{ python_min }}
-    - setuptools
 
 tests:
   - python:
